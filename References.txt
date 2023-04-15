@@ -1,0 +1,5 @@
+References:
+https://github.com/Usamahafiz8/Steganography-Python
+https://www.wired.com/story/steganography-hacker-lexicon/
+https://codepen.io/rhajeem/pen/GLNBGP
+https://sekao.net/pixeljihad/about.html

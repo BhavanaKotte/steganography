@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Posts</title>
+</head>
+<body>
+  <h1 style="color:rgb(0, 94, 255);">Posts</h1>
+  
+  <div id="posts-container"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/11.25.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.25.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.25.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.25.1/firebase-storage.js"></script>
+  <script src="app.js"></script>
+</body>
+<script>
+  // Call the getFiles function when the page loads
+  document.addEventListener('DOMContentLoaded', () => {
+    getFiles();
+  });
+</script>
+
+</html>
