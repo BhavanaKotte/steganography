@@ -1,0 +1,108 @@
+<head>
+  <!-- Include the Firebase App SDK -->
+  <script src="https://www.gstatic.com/firebasejs/11.25.1/firebase-app.js"></script>
+
+  <!-- Include the Firebase Authentication SDK -->
+  <script src="https://www.gstatic.com/firebasejs/11.25.1/firebase-auth.js"></script>
+
+  <!-- Your web app's Firebase configuration -->
+  <script>
+    var firebaseConfig = {
+
+     apiKey: "AIzaSyAAw0Vowk-DeOwrD1C4o09eQjTbVwTjnSk",
+
+     authDomain: "stegasteganography-9efff.firebaseapp.com",
+ 
+     projectId: "steganography-9efff",
+
+     storageBucket: "steganography-9efff.appspot.com",
+
+     messagingSenderId: "943619753532",
+
+     appId: "1:943619753532:web:6d4b23042ac979b4c36539",
+
+     measurementId: "G-7JF69PXF60"
+
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <style> h1 {text-align: center;}
+  h2 {text-align: center;}
+  h3 {text-align: center;}
+  .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 3px 2px;
+  cursor: pointer;
+} 
+.button2 {background-color: #008CBA;} /* Blue */
+.button3 {background-color: #f44336;} /* Red */
+input[type=text] {
+  width: 10%;
+  padding: 5px 7px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 2px solid rgb(255, 0, 106);
+  border-radius: 4px;
+} </style>
+ 
+</head>
+<h1 style="color:rgb(0, 251, 255);"> Information Seurity Assignment</h1>
+<h2  style="color:rgb(9, 255, 0);"> Bhavana Kotte</h2>
+<h3 style="color:rgb(191, 255, 0);">1002025527</h3>
+</h2>
+<body>
+  <form>
+    <label for="file">Choose a file:</label>
+    <input type="file" id="file" name="file"><br><br>
+    <label for="message">Enter a secret message:</label>
+    <input type="text" id="message" name="message"><br><br>
+    <button class="button" id="submit-btn">Submit</button>
+  </form>
+  <button class="button button2"id="posts-btn" onclick="window.location.href='posts.html';">Posts</button>
+
+  <form id="auth-form" style="display: none;">
+    <label for="email">Email:</label>
+    <input type="email" id="email" required><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" required><br><br>
+    <button class="button button3" type="submit">Sign In</button>
+   
+  </form>
+
+  <script>
+    // Get the sign-in form element
+    var signInForm = document.getElementById("auth-form");
+
+    // Add an event listener to the sign-in form
+    signInForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Get the user's email and password
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+
+      // Sign in the user with email and password
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(function(userCredential) {
+          // Signed in successfully
+          var user = userCredential.user;
+          console.log("Signed in as:", user.email);
+        })
+        .catch(function(error) {
+          // Handle sign-in errors
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          console.error("Sign-in error:", errorCode, errorMessage);
+        });
+    });
+  </script>
+</body>
+
